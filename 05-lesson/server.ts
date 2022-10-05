@@ -1,4 +1,5 @@
 import http, { IncomingMessage, Server, ServerResponse } from "http";
+import { MathUtil } from "./util/MathUtil";
 import { StringUtil } from "./util/StringUtil";
 
 const hostName:string = '127.0.0.1';
@@ -13,6 +14,10 @@ const server:Server = http.createServer( (req:IncomingMessage, res:ServerRespons
 
     let channelName:string = 'Xo\'jamuratov Jahongir Matmurot o\'g\'li';
     let result:string = StringUtil.printTriangle(channelName);
+
+    //Math util
+    let theNumber:number = 5;
+    result = MathUtil.printMathTable(theNumber);
     
     res.end(`<pre style="color: green">${result}</pre>`)
 });
